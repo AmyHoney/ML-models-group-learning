@@ -1,1 +1,3 @@
-# ML-models-group-learning-
+# ML-models-group-learning
+
+Learn model fine-tunable basic concepts
