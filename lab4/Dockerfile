@@ -1,4 +1,4 @@
-FROM harbor-repo.vmware.com/zyajing/pytorch-training:1.11.0-gpu-py38-cu113-ubuntu20.04
+FROM harbor-repo.vmware.com/zyajing/pytorch-training:1.11.0-gpu-py38-cu113-ubuntu20.04-2022-07-01-11-07-30-multistage-common
 
 RUN pip install --no-cache-dir -U \
     notebook \
