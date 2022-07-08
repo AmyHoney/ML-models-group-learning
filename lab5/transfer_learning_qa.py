@@ -250,8 +250,8 @@ def run_with_args(args):
         evaluation_strategy="epoch",
         logging_dir=".",
         learning_rate=float(args.adam_learning_rate),
-        load_best_model_at_end=False, #是否在训练结束时加载训练期间找到的最佳模型。
-        metric_for_best_model="f1", #The metric to use to compare two different models."
+        #load_best_model_at_end=False, #是否在训练结束时加载训练期间找到的最佳模型。
+        #metric_for_best_model="f1", #The metric to use to compare two different models."
         disable_tqdm=True,
         logging_first_step=True,
         logging_steps=50,
