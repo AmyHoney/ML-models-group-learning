@@ -10,6 +10,10 @@ docker pull 10.110.164.197/dlc/pytorch-training:1.11.0-gpu-py38-cu113-ubuntu20.0
 ### Download distilbert-base-cased model example 
 ```
 git clone https://github.com/AmyHoney/ml-models-group-learning.git
+cd ./lab5/model-targz
+git clone  https://gitlab.eng.vmware.com/models/pytorch-eqa-distilbert-base-cased.git
+tar -czvf pytorch-eqa-distilbert-base-cased.tar.gz pytorch-eqa-distilbert-base-cased/
+
 ```
 
 ### Mount lab5 exprimental and run docker container
