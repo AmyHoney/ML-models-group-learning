@@ -23,7 +23,8 @@ sudo docker run -it --gpus all -v ~/ml-models-group-learning:/ml-models-group-le
 
 ### Start to train model
 ```
-cd ml-models-group-learning
+docker exec -it <contianer_id> bash
+cd ml-models-group-learning/lab5
 python transfer_learning_qa.py \
     --model-dir "./distilbert_model_dir" \
     --train "/ml-models-group-learning/lab5/datasets/squad/" \
