@@ -30,7 +30,7 @@ python transfer_learning_qa.py \
     --train "/ml-models-group-learning/lab5/datasets/squad/" \
     --pretrained-model "/ml-models-group-learning/lab5/model-targz"  \
     --epochs 1  \
-    --batch-size 16
+    --batch-size 4
 ```
 
 ## Training other QuestionAnswer model automatically
