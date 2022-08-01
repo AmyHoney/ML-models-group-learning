@@ -1,7 +1,12 @@
-MODEL_NAME_DIR = "pytorch-eqa-distilbert-base-cased"
+MODEL_NAME_DIR = "pytorch-eqa-distilbert-base-cased" 
+# MODEL_NAME_DIR = "bert-base-cased"
 TRAIN_VAL_SPLIT = 0.80
 # INPUT_DATA_FILENAME = "data.csv"
-INPUT_DATA_FILENAME_PY = "squad.py"
+INPUT_DATA_FILENAME_PY = "squad.py" # squad.py, adversarial_qa.py
+INPUT_DATA_CINFIG = "plain_text" # # if adversarial_qa dataset, need to give valid config: `adversarialQA`; if squad dataset, need to give valid config: `plain_text`.
+
+INPUT_DATA_FILENAME_JSON = "dureader_robust.train.json"
+
 TRAIN = "train"
 VALIDATION = "validation"
 TEST = "test"
