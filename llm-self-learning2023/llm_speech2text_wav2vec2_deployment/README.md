@@ -1,4 +1,4 @@
-## Speech2Text Wav2Vec2 example:
+## Speech2Text Wav2Vec2 example using torchserve:
 In this example we will use a pretrained Wav2Vec2 model for Speech2Text using the `transformers` library: https://huggingface.co/docs/transformers/model_doc/wav2vec2 and serve it using torchserve.
 
 **If you want to know more details, please see speech2text_wav2vec2.ipynb**
