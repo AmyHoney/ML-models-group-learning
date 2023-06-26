@@ -1,27 +1,30 @@
-# Speech2text (facebook/wav2vec2-base-960h) model inference with Huggingface API2
+## Speech2Text Wav2Vec2 example:
+In this example we will use a pretrained Wav2Vec2 model for Speech2Text using the `transformers` library: https://huggingface.co/docs/transformers/model_doc/wav2vec2 and serve it using torchserve.
 
-## Overview
-
-[facebook/wav2vec2-base-960h](https://huggingface.co/facebook/wav2vec2-base-960h) the base model pretrained and fine-tuned on 960 hours of Librispeech on 16kHz sampled speech audio. When using the model make sure that your speech input is also sampled at 16Khz.
-
-## Model inference
+**If you want to know more details, please see speech2text_wav2vec2.ipynb**
 
 ### Create and run a Notebook server
 
-Use a customized image that has Java and torchserve installed. You can use [Dockerfile](../Dockerfile) to generate your own custom image. You can also directly use an image published on VMware harbor repo:
+The dependencies have integrated into the below docker image, you can directly use an image published on VMware harbor repo to run speech2text model:
 
 ```bash
 projects.registry.vmware.com/models/notebook/hf-inference-deploy:v1
 ```
 
-Start the Notebook server with GPU:
+**No need GPU for speech2Text Wav2Vec2 model deployment** 
 
+### Prepare model and run server
+Next, we need to download our wav2vec2 model and archive it for use by torchserve:
 ```bash
-docker run --gpus all -it -v `pwd`:/mnt projects.registry.vmware.com/models/notebook/hf-inference-deploy:v1
+./download_wav2vec2.py # Downloads model and creates folder `./model` with all necessary files
+./archive_model.sh # Creates .mar archive using torch-model-archiver and moves it to folder `./model_store`
 ```
 
-### Model Inference
-
+Now let's start the server and try it out with our example file!
 ```bash
-python3 redpajama-inference.py
+torchserve --start --model-store model_store --models Wav2Vec2=Wav2Vec2.mar --ncs
+# Once the server is running, let's try it with:
+curl -X POST http://127.0.0.1:8080/predictions/Wav2Vec2 --data-binary '@./sample.wav' -H "Content-Type: audio/basic"
+# Which will happily return:
+I HAD THAT CURIOSITY BESIDE ME AT THIS MOMENT%
 ```
