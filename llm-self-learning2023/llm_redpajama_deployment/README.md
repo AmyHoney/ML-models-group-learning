@@ -8,7 +8,7 @@
 
 ### Create and run a Notebook server
 
-Use a customized image that has Java and torchserve installed. You can use [Dockerfile](../Dockerfile) to generate your own custom image. You can also directly use an image published on VMware harbor repo:
+The dependencies have integrated into the below docker image, you can directly use an image published on VMware harbor repo:
 
 ```bash
 projects.registry.vmware.com/models/notebook/hf-inference-deploy:v1

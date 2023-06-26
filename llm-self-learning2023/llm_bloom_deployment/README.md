@@ -67,7 +67,7 @@ Use the ``torch-model-archiver`` CLI to generate the model MAR file.
 torch-model-archiver --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json -r requirements.txt
 ```
 
-The MAR model package is around 25GB.
+The MAR model package is around 3GB.
 
 **__Note__**: Modifying setup_config.json
 - Enable `low_cpu_mem_usage` to use accelerate
