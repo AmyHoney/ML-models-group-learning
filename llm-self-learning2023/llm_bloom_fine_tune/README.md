@@ -39,6 +39,15 @@ When you choose the higher parameters model, please use large GPU resources to e
 ```bash
 python3 finetune.py
 ```
+### Merge LoRa adapters back to base model
+
+```bash
+python merge_peft_adapters.py --base_model_name_or_path <put your base model name> --peft_model_path ./lora-alpaca
+```
+
+### Model inference using finetuned model
+
+Once you merge LoRa adapters back to base model, you will get the finetuned model. Then refer to [llm-self-learning2023/llm_bloom_deployment](https://github.com/Yajing-Z/ml-models-group-learning/tree/main/llm-self-learning2023/llm_bloom_deployment) to do model inference with the finetuned model.
 
 ## Reference
 - [BLOOM-LoRA: Low-Rank adaptation for various Instruct-Tuning datasets](https://github.com/linhduongtuan/BLOOM-LORA/tree/main)
